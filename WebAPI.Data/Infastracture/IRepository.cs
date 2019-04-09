@@ -9,30 +9,33 @@ namespace WebAPI.Data.Infastracture
 {
     public interface IRepository<T> where T : class
     {
-        //Mark an entity new
-        void Add(T entity);
+        // Marks an entity as new
+        T Add(T entity);
 
-        //Mark an entity update
+        // Marks an entity as modified
         void Update(T entity);
 
-        //Mark an entity Remove
-        void Delete(T entity);
+        // Marks an entity to be removed
+        T Delete(T entity);
 
-        //Mark an entity Remove
-        void DelelteMulti(Expression<Func<T,bool>> where);
+        T Delete(int id);
 
-        //Get an entity by Id
-        T GetSingleById(string Id);
+        //Delete multi records
+        void DeleteMulti(Expression<Func<T, bool>> where);
 
-        //Get an entity by Id
-        T GetSingleByCondition(Expression<Func<T, bool>> expression,string[] include = null);
+        // Get an entity by int id
+        T GetSingleById(int id);
 
-        IQueryable<T> GetAll(string[] include = null);
-        IQueryable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] include = null);
-        IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total,int index=0,int size=50,string[] include = null);
+        T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null);
+
+        IEnumerable<T> GetAll(string[] includes = null);
+
+        IEnumerable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null);
+
+        IEnumerable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null);
+
         int Count(Expression<Func<T, bool>> where);
-        bool CheckContains(Expression<Func<T, bool>> whepredicatere);
 
-
+        bool CheckContains(Expression<Func<T, bool>> predicate);
     }
 }

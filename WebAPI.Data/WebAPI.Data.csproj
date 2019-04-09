@@ -52,6 +52,13 @@
     <Compile Include="Infastracture\Disposable.cs" />
     <Compile Include="Infastracture\RepositoryBase.cs" />
     <Compile Include="Infastracture\UnitOfWork.cs" />
+    <Compile Include="Migrations\201904090716564_InitialDB.cs" />
+    <Compile Include="Migrations\201904090716564_InitialDB.Designer.cs">
+      <DependentUpon>201904090716564_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositorys\AuthRepository.cs" />
+    <Compile Include="Repositorys\IPermissionRepository.cs" />
     <Compile Include="WebAPIDbcontext.cs" />
     <Compile Include="Infastracture\IDbFactory.cs" />
     <Compile Include="Infastracture\IRepository.cs" />
@@ -69,7 +76,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositorys\" />
+    <EmbeddedResource Include="Migrations\201904090716564_InitialDB.resx">
+      <DependentUpon>201904090716564_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

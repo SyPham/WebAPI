@@ -22,8 +22,8 @@ namespace WebAPI.Model.Models
         public string Office { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalet { get; set; }
-        [ForeignKey("RoleID")]
-        public Role RoleID { get; set; }
+
+        public virtual Role Role { get; set; }
 
     }
 }

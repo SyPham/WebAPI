@@ -72,10 +72,6 @@
       <Project>{f1c48540-ecd4-4d59-a245-dc250ccec3db}</Project>
       <Name>WebApi.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebAPI\WebAPI.csproj">
-      <Project>{9fc993a2-50fb-4a79-af17-77d949d808f6}</Project>
-      <Name>WebAPI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
