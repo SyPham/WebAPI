@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,6 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infastracture\DbFactory.cs" />
+    <Compile Include="Infastracture\Disposable.cs" />
+    <Compile Include="Infastracture\RepositoryBase.cs" />
+    <Compile Include="Infastracture\UnitOfWork.cs" />
+    <Compile Include="WebAPIDbcontext.cs" />
+    <Compile Include="Infastracture\IDbFactory.cs" />
+    <Compile Include="Infastracture\IRepository.cs" />
+    <Compile Include="Infastracture\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +63,17 @@
       <Project>{90796a5c-cd98-43e9-bb72-3331c67e5282}</Project>
       <Name>WebAPI.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebAPI.Model\WebAPI.Model.csproj">
+      <Project>{d198cc59-25b6-404a-8ffd-36860cfecdaf}</Project>
+      <Name>WebAPI.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositorys\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
