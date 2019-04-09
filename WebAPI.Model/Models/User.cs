@@ -12,9 +12,13 @@ namespace WebAPI.Model.Models
     public class User
     {
         [Key]
+        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Username { get; set; }
+        [MaxLength(200)]
         public string Office { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalet { get; set; }

@@ -10,13 +10,14 @@ using System.Threading.Tasks;
 namespace WebAPI.Model.Models
 {
     [Table("Roles")]
-  public class Role
+    public class Role
     {
         [Key]
         [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RoleID { get; set; }
-        
+        [MaxLength(50)]
         public string RoleTitle { get; set; }
-        public virtual IEnumerable<User>Users { get; set; }
+        public virtual IEnumerable<User> Users { get; set; }
     }
 }
